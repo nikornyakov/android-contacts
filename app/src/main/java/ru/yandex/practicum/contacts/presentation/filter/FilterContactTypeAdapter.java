@@ -26,23 +26,7 @@ public class FilterContactTypeAdapter extends RecyclerView.Adapter<FilterContact
 
     private final AsyncListDiffer<FilterContactTypeUi> differ = new AsyncListDiffer<>(
             new AdapterListUpdateCallback(this),
-            new AsyncDifferConfig.Builder<>(new BaseListDiffCallback<FilterContactTypeUi>() {
-                @Override
-                public boolean areItemsTheSame(@NonNull FilterContactTypeUi oldItem, @NonNull FilterContactTypeUi newItem) {
-                    return false;
-                }
-
-                @Override
-                public boolean areContentsTheSame(@NonNull FilterContactTypeUi oldItem, @NonNull FilterContactTypeUi newItem) {
-                    return false;
-                }
-
-                @NonNull
-                @Override
-                public Object getChangePayload(@NonNull FilterContactTypeUi oldItem, @NonNull FilterContactTypeUi newItem) {
-                    return null;
-                }
-            }).build()
+            new AsyncDifferConfig.Builder<>(new BaseListDiffCallback<FilterContactTypeUi>()).build()
     );
 
     private final Consumer<FilterContactTypeUi> clickListener;
